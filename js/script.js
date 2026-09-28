@@ -19,7 +19,7 @@ const APPROVED_STUDENTS = 500;
 
 function buildWhatsAppUrl(message) {
   const text = encodeURIComponent(message || WHATSAPP_MESSAGE);
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+  return `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${text}`;
 }
 
 function setupWhatsAppLinks() {
@@ -28,8 +28,11 @@ function setupWhatsAppLinks() {
     const message = (key && WHATSAPP_MESSAGES[key]) || link.dataset.message || WHATSAPP_MESSAGE;
     const url = buildWhatsAppUrl(message);
     link.setAttribute("href", url);
-    link.setAttribute("target", "_blank");
-    link.setAttribute("rel", "noopener noreferrer");
+    link.removeAttribute("target");
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      window.location.href = url;
+    });
   });
 }
 
