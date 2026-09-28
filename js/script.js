@@ -2,7 +2,7 @@
    CONFIGURACAO - edite estes valores
    ============================================= */
 
-const WHATSAPP_NUMBER = "5537988014115";
+const WHATSAPP_NUMBER = "5537999417002";
 const WHATSAPP_MESSAGE = "Ol\u00e1! Gostaria de saber mais sobre as aulas de dire\u00e7\u00e3o.";
 const WHATSAPP_MESSAGES = {
   fear: "Ol\u00e1! Tenho medo de dirigir e gostaria de agendar uma aula para ganhar mais confian\u00e7a.",
